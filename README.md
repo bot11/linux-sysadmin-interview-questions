@@ -54,25 +54,77 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 ####[[⬆]](#toc) <a name='simple'>Simple Linux Questions:</a>
 
 * What is the name and the UID of the administrator user?
+  Answer: 
+  UID is unsigned 32 bit integer: so max numbers are 2pow(32)
+  0 is the UID of the root user. 
+  1-99 are reserverd for the system user(pseudo users: mail, wheel..etc)
+  65534 is nobody
+  in /etc/passwd UID is 3rd element while, GROUP ID is 4th element
+
 * How to list all files, including hidden one, in a directory?
+  Answer: 
+  ls -la
+
 * What is the Unix/Linux command to remove a directory and its contents?
+  rm -rf 
+
 * Which command will show you free/used memory? Does free memory exist on Linux?
+  free -m 
+
 * How to search for the string "my konfi is the best" in files of a directory recursively?
+  grep -R "yiour str" *
+
 * How to connect to a remote server or what is SSH?
+  ssh user@host
+
 * How to get all environment variables and how can you use them?
+  printenv
+
 * I get "command not found" when I run ```ifconfig -a```. What can be wrong?
+ may be /usr/bin/ifconfig is not present
+
 * What happens if I type TAB-TAB?
+  
 * What command will show the available disk space on the Unix/Linux system?
+  df -h
+
 * What commands do you know that can be used to check DNS records?
+  dig, nslookup
+
 * What Unix/Linux commands will alter a files ownership, files permissions?
+chown, chmod
+
 * What does ```chmod +x FILENAME```do?
+Yhe man page of chmod covers that.
+
+u stands for user.
+g stands for group.
+o stands for others.
+a stands for all. is equal to chmod +x
+
 * What does the permission 0750 on a file mean?
+
+4-read, 2-write, 1-exec
+owner,group,world
+7     5     0
+rwx   rx    nothing
+
 * What does the permission 0750 on a directory mean?
+same as above
+
 * How to add a new system user without login permissions?
+--shell /bin/false
+
 * How to add/remove a group from a user?
+usermod
+
 * What is a bash alias?
+shortcut
+Eg: alias lm="ls -l"
+
 * How do you set the mail address of the root/a user?
 * What does CTRL-c do?
+kill 
 * What is in /etc/services?
 * How to redirect STDOUT and STDERR in bash? (> /dev/null 2>&1)
 * What is the difference between UNIX and Linux.
